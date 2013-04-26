@@ -21,7 +21,7 @@ class SMS(models.Model):
         """
         Passes this message to the send method of the current SENDER
         """
-        dj_simple.sms.SMS_SENDER.send(self)
+        dj_simple_sms.SMS_SENDER.send(self)
               
     def to_message(self):
         return "To: %s\nFrom: %s\nBody:\n%s" % (self.to_number, self.from_number, self.body)
